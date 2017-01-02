@@ -33,10 +33,13 @@ def makeWebhookResult(req):
     result = req.get("result")
     parameters = result.get("parameters")
     asset_name = parameters.get("asset")
+    attribute_type = parameters.get("attribute-type")
+    asset_type = parameters.get("asset-type")
+    community = parameters.get("community")
 
-    glossary = {'customer': 'customer definition', 'account':'account definition', 'client':'client definition'}
+    glossary = {'customer': 'a party that buys one or more products every year', 'account':'an unpaid balance', 'client':'client definition'}
 
-    speech = "The definition for " + asset_name + " is " + str(glossary[asset_name]) + "."
+    speech = "The value for the " + "'" + attribute_type + "'" + " attribute for the " + asset_type + " '" + asset_name + "' is " + str(glossary[asset_name]) + "."
 
     print("Response:")
     print(speech)
