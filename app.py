@@ -32,11 +32,11 @@ def makeWebhookResult(req):
         return {}
     result = req.get("result")
     parameters = result.get("parameters")
-    zone = parameters.get("asset")
+    asset_name = parameters.get("asset")
 
-    glossary = {'Customer': 'customer definition', 'Account':'account definition', 'Client':'client definition'}
+    glossary = {'customer': 'customer definition', 'account':'account definition', 'client':'client definition'}
 
-    speech = "The definition for " + zone + " is " + str(glossary[zone]) + "."
+    speech = "The definition for " + asset_name + " is " + str(glossary[asset_name]) + "."
 
     print("Response:")
     print(speech)
