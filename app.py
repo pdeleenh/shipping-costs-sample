@@ -37,7 +37,7 @@ def makeWebhookResult(req):
     asset_type = parameters.get("asset-type")
     community = parameters.get("community")
 
-    glossary = {'customer': 'a party that buys one or more products every year', 'account':'an unpaid balance', 'client':'client definition'}
+    glossary = {'customer': 'def for customer', 'account':'def for account', 'client':'def for client'}
 
     speech = "The value for the " + "'" + attribute_type + "'" + " attribute for the " + asset_type + " '" + asset_name + "' is " + str(glossary[asset_name]) + "."
 
